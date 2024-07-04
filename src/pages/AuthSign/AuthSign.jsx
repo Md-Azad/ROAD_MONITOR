@@ -1,28 +1,28 @@
 import { Link } from "react-router-dom";
 
-const SignUp = () => {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const form = event.target;
-    const name = form.fullname.value;
-    const username = form.username.value;
-    const email = form.email.value;
-    const password = form.password.value;
-    // console.log(name,username,email, password);
+const AuthSign = () => {
 
-    const userInfo = { name, username, email, password };
-
-    fetch("http://localhost:8004/api/admin", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(userInfo),
-    })
-      .then((res) => res.json())
-      .then((data) => console.log(data));
-  };
-
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.fullname.value;
+        const username = form.username.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        // console.log(name,username,email, password);
+    
+        const userInfo = { name, username, email, password };
+    
+        fetch("http://localhost:8004/api/admin", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(userInfo),
+        })
+          .then((res) => res.json())
+          .then((data) => console.log(data));
+      };
   return (
     <>
       <div>
@@ -33,7 +33,7 @@ const SignUp = () => {
       <div className="hero bg-base-200 min-h-screen">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold">Sign up as a user here!</h1>
+            <h1 className="text-5xl font-bold">Sign up as an Authority here!</h1>
             <p className="py-6">
               Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
               excepturi exercitationem quasi. In deleniti eaque aut repudiandae
@@ -109,4 +109,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default AuthSign;

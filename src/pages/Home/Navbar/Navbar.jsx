@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <div className="flex justify-around">
         <div>
-            <h1 className="font-bold text-orange-800 text-xl">logo</h1>
+            <h1 className="font-bold text-orange-800 text-xl">Road Monitor System</h1>
         </div>
         <div>
             <ul className="flex justify-center gap-10">

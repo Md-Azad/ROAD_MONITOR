@@ -23,7 +23,7 @@ const SignUp = () => {
       .then((data) => {
         if(data.email){
             alert("user has been successfully created");
-            localStorage.setItem("loggeduser", data.email)
+            localStorage.setItem("logged", data.email)
         }
       });
   };

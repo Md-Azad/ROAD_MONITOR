@@ -24,7 +24,7 @@ const AuthSign = () => {
           .then((data) => {
             if(data.email){
                 alert("user has been successfully created");
-                localStorage.setItem("loggedAuth", data.email)
+                localStorage.setItem("logged", data.email)
             }
           });
       };

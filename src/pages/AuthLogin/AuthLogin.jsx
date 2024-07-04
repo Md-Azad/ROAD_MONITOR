@@ -86,7 +86,7 @@ const AuthLogin = () => {
                 />
               </div>
             </form>
-            <Link to="/signup" className="text-center">
+            <Link to="/authsignup" className="text-center">
               Have not an account?{" "}
               <span className="text-green-700">Create New!</span>
             </Link>

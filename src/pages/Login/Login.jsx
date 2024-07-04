@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
+    const navigate = useNavigate()
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -19,7 +20,12 @@ const Login = () => {
             body: JSON.stringify(logInfo),
           })
             .then((res) => res.json())
-            .then((data) => console.log(data));
+            .then((data) => {
+                if(data.email){
+                    alert("User has been successfully logged in");
+                    navigate("/userhome");
+                }
+            });
 
 
     }

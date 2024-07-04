@@ -1,6 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignUp = () => {
+
+    const navigation  = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -23,7 +25,7 @@ const SignUp = () => {
       .then((data) => {
         if(data.email){
             alert("user has been successfully created");
-            localStorage.setItem("logged", data.email)
+            navigation("/login")
         }
       });
   };

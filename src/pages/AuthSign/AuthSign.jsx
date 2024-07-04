@@ -1,6 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const AuthSign = () => {
+
+    const navigation  = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -23,8 +25,9 @@ const AuthSign = () => {
           .then((res) => res.json())
           .then((data) => {
             if(data.email){
-                alert("user has been successfully created");
-                localStorage.setItem("logged", data.email)
+                alert("Authority has been successfully created");
+ 
+               navigation("/authlogin")
             }
           });
       };

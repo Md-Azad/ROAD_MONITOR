@@ -1,6 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const AuthLogin = () => {
+
+    const navigate = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -19,7 +21,12 @@ const AuthLogin = () => {
             body: JSON.stringify(logInfo),
           })
             .then((res) => res.json())
-            .then((data) => console.log(data));
+            .then((data) => {
+                if(data.email){
+                    alert("Authority has been successfully logged in");
+                    navigate("/authhome");
+                }
+            });
 
 
     }

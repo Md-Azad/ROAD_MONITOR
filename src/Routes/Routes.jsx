@@ -7,6 +7,7 @@ import AuthSign from "../pages/AuthSign/AuthSign";
 import AuthLogin from "../pages/AuthLogin/AuthLogin";
 import CreateReport from "../UserDashboard/CreateReport";
 import AuthDashboard from "../AuthDashboard/AuthDashboard";
+import Issues from "../UserDashboard/Issues";
 
 export const router = createBrowserRouter([
     {
@@ -40,6 +41,10 @@ export const router = createBrowserRouter([
         {
             path: "/authhome",
             element: <AuthDashboard></AuthDashboard>
+        },
+        {
+            path: "/issues",
+            element: <Issues></Issues>
         }
       ]
     },

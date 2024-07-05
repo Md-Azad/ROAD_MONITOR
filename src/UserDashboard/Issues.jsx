@@ -1,7 +1,22 @@
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
+
+import { useEffect } from "react";
 
 const Issues = () => {
-        const navigate = useNavigate();
+        // const navigate = useNavigate();
+
+        useEffect(() =>{
+            fetch("http://localhost:8004/api/admin", {
+                method: "GET",
+                headers: {
+                  "content-type": "application/json",
+                }
+               
+              })
+                .then((res) => res.json())
+                .then((data) => console.log(data));
+
+        },[])
     const handleReport = (event) => {
         event.preventDefault();
         const form = event.target;
